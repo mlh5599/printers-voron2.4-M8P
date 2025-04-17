@@ -1,4 +1,6 @@
 # Voron2.4-M8P + CAN Bus
+![Stock Voron Image](./stock%20V2.4r2%20Pro%20+.png)
+
 Voron 2.4 R2 350 with a BigTreeTech M8P, CP1, and CAN Bus
 
 Voron 2.4 R2 350 Guide
