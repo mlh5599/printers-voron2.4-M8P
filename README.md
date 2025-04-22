@@ -20,5 +20,9 @@ Based on the Formbot Voron-2.4 Pro+ Kit with Can Bus Wiring System.
 - [DLC Hard-wearing Gear](./Mods/DLC%20Hard-wearing%20Gear/)
 - [Bakelite Isolation Column](./Mods/Bakelite%20Isolation%20Column/README.md)
 
+## Build Log
+
+Full log of my build is [here](./Build/Build%20Log.md)
+
 ## Helpful Links
 - [Formbot Voron 2.4R2 Pro+ Kit Build by Butter Pockets](https://youtu.be/7x-eafpESLc?si=l-mvQ_TzW0u0-mF3)
