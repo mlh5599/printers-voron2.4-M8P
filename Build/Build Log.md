@@ -31,3 +31,20 @@ I'm currently still waiting on PIF parts before I can begin the build.
 I skipped ahead to page 24 while waiting on my printed parts and spent about an hour cleaning and lubricating my linear rails.
 
 ![Linear Rails](./Assets/Linear%20Rails.jpg)
+
+
+## 2025/04/24
+
+### 3 hr
+
+3d printed parts arrived.
+
+Begain working on the stealthburner assembly, finsihed the clockwork 2 portion in about 2 hours with very little difficulty.  My Dragon HF hotend is still stuck in customs but I went ahead and put together the tool carriage and fully assembled and wired the stealth burner.  
+
+| ![Clockwork2 Printed Parts](./Assets/Clockwork2%20Printed%20Parts.jpg) | ![Clockwork2 Assembly](./Assets/Clockwork2%20Assembly.jpg) |
+|---|---|
+| ![Clockwork2 Front Assembled](./Assets/Clockwork2%20Front%20Assembled.jpg) | ![Clockwork2 Back Assembled](./Assets/Clockwork2%20Back%20Assembled.jpg) |
+
+| ![SB Left Side](./Assets/SB2%20Left%20Side.jpg) | ![SB Right Side](./Assets/SB2%20Right%20Side.jpg) |
+|---|---|
+| ![SB Electronics](./Assets/SB2%20Electronics.jpg) | ![SB Front](./Assets/SB2%20Front.jpg) |
