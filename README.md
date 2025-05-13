@@ -1,28 +1,45 @@
-# Voron2.4-M8P + CAN Bus
-![Stock Voron Image](./stock%20V2.4r2%20Pro%20+.png)
+# Voron2.4
 
-Voron 2.4 R2 350 with a BigTreeTech M8P, CP1, and CAN Bus
+## Current Configuration
 
-Voron 2.4 R2 350 Guide
+### Frame
+- [Voron 2 v2.4](https://vorondesign.com/voron2.4)
+- Main Color - [Fusion Filaments MATTE ABS 1.5 Carbon Rod Black](https://www.fusionfilaments.com/shop/abs1-5175crb-1kg-abs-matte-filament-carbon-rod-black-7946?category=26#attribute_values=644,1089,1087,694,1091,695)
+- Accent Color - [Fusion Filaments Matte ABS 1.5 Heavy Water Blue](https://www.fusionfilaments.com/shop/abs1-5175hwb-1kg-abs-matte-filament-heavy-water-blue-7948?category=26#attribute_values=1140,1089,1087,694,1091,695)
+- [Voron2.4_Y_Endstop_Relocation](https://github.com/VoronDesign/VoronUsers/tree/main/printer_mods/hartk1213/Voron2.4_Y_Endstop_Relocation)
 
-Based on the Formbot Voron-2.4 Pro+ Kit with Can Bus Wiring System.
-- [Formbot Documents](https://github.com/FORMBOT/Voron-2.4)
-- [Formbot Guide](https://github.com/Zev-se/Formbot-voron-2.4-build-guide/blob/main/guide.md)
+### Toolhead
+- [Stealthburner Toolhead](https://vorondesign.com/voron_stealthburner) with Clockwork 2 extruder
+- [Dragon High Flow v1](https://www.phaetus.com/en-us/products/dragon-hotend-hf)
+- [TAP Leveling Sensor w/v2 PCB](https://github.com/VoronDesign/Voron-Tap) printed in [3DXTech PC-CF](https://www.3dxtech.com/products/carbonx-pc-cf-1)
+- Hotend Mount printed in [Fiberology PA12-CF15](https://fiberlogy.com/en/fiberlogy-filaments/pa12cf_en/)
+- PT1000 Temperature Sensor
 
+### Build Surface
+- 120v 650w Silocone Heater Mat
+- Magnetic Double Sided PEI Spring Steel Sheet
 
-## Mod List
-- [CAN Bus](./Mods/CAN%20Bus/)
-- [TAP Leveling Sensor](./Mods/TAP%20Leveling%20Sensor/)
-- [Filament Runout Sensor](./Mods/Filament%20Runout%20Sensor/)
-- [LED Chamber Illumination](./Mods/LED%20Chamber%20Illumination/)
-- [Nevermore Air Filter](./Mods/Nevermore%20Air%20FIlter/)
-- [PT1000 Temperature Sensor](./Mods/Bakelite%20Isolation%20Column/)
-- [DLC Hard-wearing Gear](./Mods/DLC%20Hard-wearing%20Gear/)
-- [Bakelite Isolation Column](./Mods/Bakelite%20Isolation%20Column/README.md)
+### Motion
+- Moons Nema 17 MS17HD6P420I-04 1.8° A/B/Z Motors
+- Generic Kit Idlers and Pulleys 
+- Generic Kit Linear Rails
+- Gates Belts
 
-## Build Log
+### Electronics
+- [BTT Manta M8P v2.0](https://github.com/bigtreetech/Manta-M8P)
+- [BTT EBB SB2209 CAN (RP2040) v1.0](https://github.com/bigtreetech/EBB)
+- [BTT TMC2209 tepper Motor Drivers (A/B/Z)](https://github.com/bigtreetech/BIGTREETECH-TMC2209-V1.2)
 
-Full log of my build is [here](./Build/Build%20Log.md)
+### Klipper Settings
+- Can be found in the [KlipperBackup](https://github.com/mlh5599/printers-voron2.4-M8P/tree/KlipperBackup) branch
 
-## Helpful Links
-- [Formbot Voron 2.4R2 Pro+ Kit Build by Butter Pockets](https://youtu.be/7x-eafpESLc?si=l-mvQ_TzW0u0-mF3)
+### Slicer Settings
+- [OrcaSlicer](./Slicer%20Settings/OrcaSlicer/)
+
+## Mod's I Want
+- [Galileo 2 Extruder](https://github.com/JaredC01/Galileo2)
+- [Chaotic Labs CNC TAP V2](https://www.chaoticlab.com/products/cnc-voron-tap)
+- [Voron LED diffuser](https://www.printables.com/model/217102-voron-led-diffuser)
+- Better Rails?
+- Better Idlers/Pulleys?
+v
