@@ -1,0 +1,50 @@
+[filament_switch_sensor filament_sensor]
+switch_pin: ^PF0
+pause_on_runout: True
+runout_gcode: _FILAMENT_RUNOUT
+
+# Disabled 2026-08-07: false-triggering during active extrusion even
+# after raising detection_length 7.0 -> 10.0. Encoder LED tracks manual
+# filament movement fine, so root cause is still open. Runout detection
+# (filament_switch_sensor above) stays active.
+#[filament_motion_sensor filament_motion_sensor]
+#switch_pin: ^PF1
+#detection_length: 10.0
+#extruder: extruder
+#pause_on_runout: True
+#runout_gcode: _FILAMENT_RUNOUT
+
+# On runout, pause_on_runout above already triggers a single PAUSE (which
+# parks the toolhead away from the print via mainsail.cfg's
+# _TOOLHEAD_PARK_PAUSE_CANCEL, and stashes the current extruder target in
+# RESUME's last_extruder_temp for later restore). This macro runs right
+# after that PAUSE: it cools the hotend so it is not sitting hot next to
+# the part, but deliberately leaves heater_bed alone so the bed stays hot.
+# Setting RESUME's idle_state forces RESUME to take its "reheat before
+# resuming" branch (blocking M109 back to last_extruder_temp) instead of
+# just checking whether the (now-cold) extruder is already hot enough.
+#
+# It also extends idle_timeout to 6 hours so Klipper's own idle safety
+# shutoff (which would otherwise TURN_OFF_HEATERS, including the bed,
+# after the default 10 minutes) does not kill the bed heater while the
+# runout sits unattended. The pre-runout timeout is stashed into RESUME's
+# restore_idle_timeout, which RESUME/CANCEL_PRINT already restore
+# automatically once the print resumes or is cancelled. Only this
+# runout path extends the timeout - a manual pause or M600 still gets
+# the normal 10-minute default from mainsail.cfg's PAUSE macro.
+[gcode_macro _FILAMENT_RUNOUT]
+description: Helper - cool the hotend after a runout pause, keep the bed hot for up to 6 hours
+gcode:
+    {% if printer.toolhead.extruder != "" %}
+    SET_HEATER_TEMPERATURE HEATER=extruder TARGET=0
+    {% endif %}
+    SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=idle_state VALUE=True
+    SET_GCODE_VARIABLE MACRO=RESUME VARIABLE=restore_idle_timeout VALUE={printer.configfile.settings.idle_timeout.timeout}
+    SET_IDLE_TIMEOUT TIMEOUT=21600
+
+# Tells mainsail.cfg's RESUME macro to refuse to resume if this sensor
+# still reports no filament. mainsail.cfg itself is a symlink into the
+# upstream mainsail-config repo, so this override lives here instead.
+[gcode_macro _CLIENT_VARIABLE]
+variable_runout_sensor: "filament_switch_sensor filament_sensor"
+gcode:
