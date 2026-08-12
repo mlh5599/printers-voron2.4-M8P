@@ -38,6 +38,7 @@
 
 ## Maintenance Log
 - 2026-08-10: Re-enabled the filament motion sensor (previously disabled 2026-08-07 for false-triggering during active extrusion; root cause was never identified). Added `FILAMENT_MOTION_SUSPEND`/`FILAMENT_MOTION_RESUME` macros for manual toggling — unlike the runout sensor's `RUNOUT_SUSPEND`/`RUNOUT_RESUME`, this has no auto re-enable timer, since an unattended re-enable would just reintroduce the false-trigger problem mid-print.
+- 2026-08-12: Removed Klippain Shake&Tune. Every attempted run threw a Klipper "MCU Timer Too Close" error, suspected to be the BTT CB1's limited processing headroom for accelerometer sampling — the plugin's own docs note its most conservative setting is meant to avoid exactly this on lower-end devices, and it still wasn't enough here. Removed the `[shaketune]` section from `printer.cfg`, the `[update_manager Klippain-ShakeTune]` block from `moonraker.conf`, the `~/klipper/klippy/extras/shaketune` symlink, and deleted `~/klippain_shaketune` and the leftover `ShakeTune_results/` data. Stock Klipper input shaping is untouched.
 
 ## Mod's I Want
 - [Galileo 2 Extruder](https://github.com/JaredC01/Galileo2)
